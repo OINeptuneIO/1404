@@ -42,12 +42,12 @@ def main():
                     fare = 0
                     if current_taxi.name == 'Limo' or current_taxi.name == 'Hummer':
                         flagfall=4.5
-                        fare = (fare1*(1.23*current_taxi.fanciness))+flagfall
+                        fare = round((fare1*(1.23*current_taxi.fanciness))+flagfall,1)
                     else:
                         flagfall=0
-                        fare = fare1*1.23
+                        fare = round(fare1*1.23,1)
                     bill_to_date += fare
-                    print(f"Your {current_taxi.name} trip cost you ${fare}")
+                    print(f"Your {current_taxi.name} trip cost you ${fare:.2f}")
                     print(f"Bill to date: ${bill_to_date:.2f}")
                 except ValueError:
                     print("Invalid distance")
